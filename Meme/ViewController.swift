@@ -39,19 +39,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     {
         let memeTextAttributes = [
             NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSBackgroundColorAttributeName: UIColor.blackColor(),
             NSStrokeColorAttributeName : UIColor.blackColor(),
             NSFontAttributeName:UIFont(name:"HelveticaNeue-CondensedBlack",size: 40)!,
-            NSStrokeWidthAttributeName:-1.0
+            NSStrokeWidthAttributeName:-2.0
         ]
+        
         
         //Set the text delegate to self so that the implemented methods can be self applied
         topText.delegate = self
         bottomText.delegate = self
         
         
-        //Text should be center-aligned
-        topText.textAlignment = .Center
-        bottomText.textAlignment = .Center
         
         //Initialize Top and Bottom texts
         topText.text    = "TOP"
@@ -60,6 +59,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //Initialize Text Attributes
         topText.defaultTextAttributes = memeTextAttributes
         bottomText.defaultTextAttributes = memeTextAttributes
+        
+        //Text should be center-aligned
+        topText.textAlignment = .Center
+        bottomText.textAlignment = .Center
+        
     }
     
     
@@ -150,6 +154,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         presentViewController(activityViewController, animated: true, completion: nil)
         
+   
+        activityViewController.popoverPresentationController?.sourceView=self.view
+        
+        
         activityViewController.completionWithItemsHandler={
             (activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
             
@@ -226,10 +234,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return memedImage
+        
         
         //TODO: Show toolbar and navbar
         topNavbar.hidden = false
         bottomToolbar.hidden = false
+        
+        return memedImage
     }
 }
