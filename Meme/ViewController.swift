@@ -39,18 +39,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     {
         let memeTextAttributes = [
             NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSBackgroundColorAttributeName: UIColor.blackColor(),
+            //NSBackgroundColorAttributeName: UIColor.blackColor(),
             NSStrokeColorAttributeName : UIColor.blackColor(),
             NSFontAttributeName:UIFont(name:"HelveticaNeue-CondensedBlack",size: 40)!,
             NSStrokeWidthAttributeName:-2.0
         ]
         
-        
         //Set the text delegate to self so that the implemented methods can be self applied
         topText.delegate = self
         bottomText.delegate = self
-        
-        
         
         //Initialize Top and Bottom texts
         topText.text    = "TOP"
@@ -60,13 +57,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topText.defaultTextAttributes = memeTextAttributes
         bottomText.defaultTextAttributes = memeTextAttributes
         
-        //Text should be center-aligned
+        //Text should be center-aligned, this is placed after the default memetext attributes are loaded in the textFields
         topText.textAlignment = .Center
         bottomText.textAlignment = .Center
-        
     }
-    
-    
     
     override func viewWillAppear(animated: Bool)
     {
@@ -154,8 +148,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         presentViewController(activityViewController, animated: true, completion: nil)
         
-   
-        activityViewController.popoverPresentationController?.sourceView=self.view
+        //Ref: http://stackoverflow.com/questions/25644054/uiactivityviewcontroller-crashing-on-ios8-ipads
+        activityViewController.popoverPresentationController?.sourceView = self.view
         
         
         activityViewController.completionWithItemsHandler={
@@ -169,7 +163,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             //Activity to save the image
             self.save()
-            //them dismiss the view controller
+            //then dismiss the view controller
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
