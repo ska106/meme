@@ -24,6 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //Custom Variable
     var memes: [MemeModel]!
     var initialViewYPosition:CGFloat = 0.0
+    var activeTextField = UITextField!()
 
     override func viewDidLoad()
     {
@@ -177,6 +178,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.enabled=false
         topText.text = "TOP"
         bottomText.text = "BOTTOM"
+        self.activeTextField = nil
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -194,8 +196,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func textFieldDidBeginEditing(textField: UITextField)
     {
-        if (topText.text == "TOP") {topText.text = ""}
-        if (bottomText.text == "BOTTOM") {bottomText.text = ""}
+        //Ref:http://stackoverflow.com/questions/30918732/how-to-determine-which-textfield-is-active-swift/30918882
+        activeTextField = textField
+        if (self.activeTextField.text == "TOP") {topText.text = ""}
+        if (self.activeTextField.text == "BOTTOM") {bottomText.text = ""}
     }
     
     /*

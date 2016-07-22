@@ -198,6 +198,10 @@
 		C0F8E0F01D1741C7000FFCC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					bottomText,
+					topText,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Agrawal;
