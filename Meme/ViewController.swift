@@ -24,7 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //Custom Variable
     var memes: [MemeModel]!
     var initialViewYPosition:CGFloat = 0.0
-    var activeTextField = UITextField!()
+    var activeTextField : UITextField!
 
     override func viewDidLoad()
     {
@@ -110,9 +110,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func showKeyboard(notification:NSNotification)
     {
-        initialViewYPosition  -= getKeyboardHeight(notification)
-        self.view.frame.origin.y = initialViewYPosition
-        initialViewYPosition = 0.00
+        // Enhancement : Show keyboard onnly for the Bottom text.
+        if (topText.isFirstResponder() == false)
+        {
+            initialViewYPosition  -= getKeyboardHeight(notification)
+            self.view.frame.origin.y = initialViewYPosition
+            initialViewYPosition = 0.00
+        }
     }
     
     func hideKeyboard(notification:NSNotification)
@@ -232,7 +236,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
         
         //TODO: Show toolbar and navbar
         topNavbar.hidden = false
