@@ -118,8 +118,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         {
             initialViewYPosition  -= getKeyboardHeight(notification)
             self.view.frame.origin.y = initialViewYPosition
-            initialViewYPosition = 0.00
         }
+        initialViewYPosition = 0.00
     }
     
     func hideKeyboard(notification:NSNotification)
