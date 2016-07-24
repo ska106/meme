@@ -49,7 +49,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             //NSBackgroundColorAttributeName: UIColor.blackColor(),
             NSStrokeColorAttributeName : UIColor.blackColor(),
             NSFontAttributeName:UIFont(name:"HelveticaNeue-CondensedBlack",size: 40)!,
-            NSStrokeWidthAttributeName:-2.0
+            NSStrokeWidthAttributeName:-3.3
         ]
         
         //Set the text delegate to self so that the implemented methods can be self applied
@@ -93,8 +93,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func subscribeToKeyboardNotifications()
     {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.showKeyboard(_:)), name: UIKeyboardWillShowNotification, object:nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.hideKeyboard(_:)), name: UIKeyboardWillHideNotification, object:nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.showKeyboard(_:)), name: UIKeyboardWillShowNotification, object:nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.hideKeyboard(_:)), name: UIKeyboardWillHideNotification, object:nil)
     }
     
     func unsubscribeToKeyboardNotifications()
