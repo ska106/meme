@@ -112,18 +112,18 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func showKeyboard(notification:NSNotification)
     {
-        // Enhancement : Show keyboard onnly for the Bottom text.
-        if (topText.isFirstResponder() == false)
+        if bottomText.isFirstResponder()
         {
-            initialViewYPosition  -= getKeyboardHeight(notification)
-            self.view.frame.origin.y = initialViewYPosition
+            view.frame.origin.y = getKeyboardHeight(notification) * (-1)
         }
-        initialViewYPosition = 0.00
     }
     
     func hideKeyboard(notification:NSNotification)
     {
-        self.view.frame.origin.y = 0
+        if bottomText.isFirstResponder()
+        {
+            self.view.frame.origin.y = 0
+        }
     }
     
     /*
