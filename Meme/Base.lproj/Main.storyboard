@@ -65,7 +65,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rkF-61-ul9"/>
                                     <barButtonItem systemItem="camera" id="6ET-p7-1eO">
                                         <connections>
-                                            <action selector="clickAnImage:" destination="BYZ-38-t0r" id="wzR-sT-hDN"/>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="uFv-aX-3XW"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ubo-By-uDl"/>

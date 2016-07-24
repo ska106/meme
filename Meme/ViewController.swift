@@ -29,17 +29,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let TAG_CAMERA_BUTTON:Int = 0
     let TAG_ALBUM_BUTTON:Int = 1
     
+    let LABEL_TOP_TEXT:String = "TOP"
+    let LABEL_BOTTOM_TEXT:String = "BOTTOM"
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        initializeMemeTexts()
+        initializeMemeTexts(topText, labelText:LABEL_TOP_TEXT)
+        initializeMemeTexts(bottomText, labelText:LABEL_BOTTOM_TEXT)
         
         //This seting will not stretch the image selected in the image view.
         imageView.contentMode = .ScaleAspectFit
     }
     
-    func initializeMemeTexts()
+    func initializeMemeTexts(textField:UITextField , labelText:String)
     {
         let memeTextAttributes = [
             NSForegroundColorAttributeName: UIColor.whiteColor(),
@@ -50,20 +53,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         ]
         
         //Set the text delegate to self so that the implemented methods can be self applied
-        topText.delegate = self
-        bottomText.delegate = self
+        textField.delegate = self
         
         //Initialize Top and Bottom texts
-        topText.text    = "TOP"
-        bottomText.text = "BOTTOM"
+        textField.text  = labelText
         
         //Initialize Text Attributes
-        topText.defaultTextAttributes = memeTextAttributes
-        bottomText.defaultTextAttributes = memeTextAttributes
+        textField.defaultTextAttributes = memeTextAttributes
         
         //Text should be center-aligned, this is placed after the default memetext attributes are loaded in the textFields
-        topText.textAlignment = .Center
-        bottomText.textAlignment = .Center
+        textField.textAlignment = .Center
     }
     
     override func viewWillAppear(animated: Bool)
@@ -138,10 +137,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         switch sender.tag
         {
-            case TAG_ALBUM_BUTTON:  pickController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-                                    break
             case TAG_CAMERA_BUTTON: pickController.sourceType = UIImagePickerControllerSourceType.Camera
                                     break
+            
+            case TAG_ALBUM_BUTTON:  pickController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                                    break
+            
             default: break
         }
         self.presentViewController(pickController, animated: true, completion: nil)
@@ -181,8 +182,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     {
         imageView.image = nil
         shareButton.enabled=false
-        topText.text = "TOP"
-        bottomText.text = "BOTTOM"
+        topText.text = LABEL_TOP_TEXT
+        bottomText.text = LABEL_BOTTOM_TEXT
         self.activeTextField = nil
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -203,8 +204,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     {
         //Ref:http://stackoverflow.com/questions/30918732/how-to-determine-which-textfield-is-active-swift/30918882
         activeTextField = textField
-        if (self.activeTextField.text == "TOP") {topText.text = ""}
-        if (self.activeTextField.text == "BOTTOM") {bottomText.text = ""}
+        if (self.activeTextField.text == LABEL_TOP_TEXT)    {topText.text = ""}
+        if (self.activeTextField.text == LABEL_BOTTOM_TEXT) {bottomText.text = ""}
     }
     
     /*
