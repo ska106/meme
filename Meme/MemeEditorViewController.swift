@@ -31,6 +31,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     let LABEL_TOP_TEXT:String = "TOP"
     let LABEL_BOTTOM_TEXT:String = "BOTTOM"
+    
+    override func prefersStatusBarHidden() -> Bool
+    {
+        return true     // status bar should be hidden
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
