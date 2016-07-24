@@ -25,7 +25,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var memes: [MemeModel]!
     var initialViewYPosition:CGFloat = 0.0
     var activeTextField : UITextField!
-
+    
+    let TAG_CAMERA_BUTTON:Int = 0
+    let TAG_ALBUM_BUTTON:Int = 1
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -125,24 +128,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     /*
-     Function to pick an image from the Photo Library.
+     Function to pick an image from either the Photo Library / Camera.
      */
     @IBAction func pickAnImage(sender: AnyObject)
     {
+        print("Button pressed: ", sender.tag)
         let pickController = UIImagePickerController();
-        pickController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         pickController.delegate = self
-        self.presentViewController(pickController, animated: true, completion: nil)
-    }
-    
-    /*
-     Function to pick an image from the Camera.
-     */
-    @IBAction func clickAnImage(sender: AnyObject)
-    {
-        let pickController = UIImagePickerController();
-        pickController.sourceType = UIImagePickerControllerSourceType.Camera
-        pickController.delegate = self
+        
+        switch sender.tag
+        {
+            case TAG_ALBUM_BUTTON:  pickController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                                    break
+            case TAG_CAMERA_BUTTON: pickController.sourceType = UIImagePickerControllerSourceType.Camera
+                                    break
+            default: break
+        }
         self.presentViewController(pickController, animated: true, completion: nil)
     }
     

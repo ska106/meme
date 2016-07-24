@@ -69,9 +69,9 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ubo-By-uDl"/>
-                                    <barButtonItem title="Album" id="Hb7-T5-est">
+                                    <barButtonItem tag="1" title="Album" id="Hb7-T5-est">
                                         <connections>
-                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="dZ1-Di-cfv"/>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="cOZ-sL-Bfd"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="IVx-H2-u1Z"/>
