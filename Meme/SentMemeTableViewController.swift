@@ -40,4 +40,14 @@ class SentMemeTableViewController:UITableViewController
         cell.labelCell.text = "TOP:"+favoriteThingForRow.topLabel + " BOTTOM: " + favoriteThingForRow.bottomLabel
         return cell
     }
+    
+    /*
+     * Display the DetailView controller when an image is selected from the Table.
+     */
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        detailController.memeImage = self.memes[indexPath.row]
+        self.navigationController!.pushViewController(detailController, animated: true)
+    }
 }

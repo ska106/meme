@@ -39,20 +39,23 @@ class SentMemeCollectionViewController: UICollectionViewController
         return self.memes.count
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-//        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
-//        detailController.myMeme = self.memes![indexPath.row]
-//        self.navigationController!.pushViewController(detailController, animated: true)
-    }
-    
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        
         let myCell = collectionView.dequeueReusableCellWithReuseIdentifier("memeCollectionCell", forIndexPath: indexPath) as! SentMemeCollectionCell
         if(self.memes.count>0)
         {
             myCell.collectionImageCell.image = self.memes[indexPath.row].savedMemeImage
         }
         return myCell
+    }
+    
+    /*
+     * Display the DetailView controller when an image is selected from the Collection.
+     */
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        detailController.memeImage = self.memes[indexPath.row]
+        self.navigationController!.pushViewController(detailController, animated: true)
     }
 }
