@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme Detail View Controller-->
         <scene sceneID="kQz-LO-dRw">
             <objects>
-                <viewController id="jvc-l9-b69" sceneMemberID="viewController">
+                <viewController id="jvc-l9-b69" customClass="MemeDetailViewController" customModule="Meme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T7E-qJ-CsR"/>
                         <viewControllerLayoutGuide type="bottom" id="x5X-O6-v4y"/>
@@ -30,6 +30,9 @@
                             <constraint firstItem="dyz-sZ-Eyu" firstAttribute="top" secondItem="XMc-F3-4sn" secondAttribute="top" id="i27-mf-liw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="memeImageView" destination="dyz-sZ-Eyu" id="SOe-Fs-vhD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmo-Xd-fcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
