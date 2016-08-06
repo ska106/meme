@@ -22,7 +22,8 @@ class SentMemeCollectionViewController: UICollectionViewController
     {
         super.viewDidLoad()
         let space : CGFloat = 3.0
-        let dimension = (self.view.frame.width) - (2*space) / 3
+        //decide the dimension based on the orientation of the device.
+        let dimension = (UIDevice.currentDevice().orientation.isPortrait) ?  (self.view.frame.width) - (2*space) / 3 : (self.view.frame.height) - (2*space) / 3
         sentMemeCollectionFlowLayout.minimumInteritemSpacing = space
         sentMemeCollectionFlowLayout.minimumLineSpacing = space
         sentMemeCollectionFlowLayout.itemSize = CGSizeMake(dimension, dimension)
