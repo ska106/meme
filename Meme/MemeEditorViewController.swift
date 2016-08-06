@@ -89,12 +89,18 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         //subscribe to keyboard notifications
         subscribeToKeyboardNotifications()
+        
+        //Hide the Tab bar controller
+        self.tabBarController?.tabBar.hidden = true
     }
     
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
         unsubscribeToKeyboardNotifications()
+        
+        //Unhide the Tab bar controller
+        self.tabBarController?.tabBar.hidden = false
     }
     
     func subscribeToKeyboardNotifications()
