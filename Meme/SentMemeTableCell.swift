@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class SentMemeTableCell
+class SentMemeTableCell:UITableViewCell
 {
     
+    @IBOutlet weak var imageCell: UIImageView!
+    @IBOutlet weak var labelCell: UILabel!
 }
