@@ -70,8 +70,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4X4-Zf-K5k">
-                                <rect key="frame" x="0.0" y="40" width="600" height="516"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4X4-Zf-K5k">
+                                <rect key="frame" x="0.0" y="40" width="600" height="467"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjO-BJ-N37">
                                 <rect key="frame" x="0.0" y="40" width="600" height="40"/>
@@ -81,8 +81,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19c-0S-0sZ">
-                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19c-0S-0sZ">
+                                <rect key="frame" x="0.0" y="463" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="7mB-DF-ehq"/>
                                     <constraint firstAttribute="height" constant="44" id="IX1-tG-xkc"/>
@@ -91,8 +91,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" restorationIdentifier="click" translatesAutoresizingMaskIntoConstraints="NO" id="TCZ-5K-9gy">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" restorationIdentifier="click" translatesAutoresizingMaskIntoConstraints="NO" id="TCZ-5K-9gy">
+                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rkF-61-ul9"/>
                                     <barButtonItem systemItem="camera" id="6ET-p7-1eO">
@@ -276,6 +276,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="sentMemeCollectionFlowLayout" destination="Uvs-Sg-fav" id="TgG-Xk-p2Y"/>
+                        <outlet property="sentMemeCollectionView" destination="RIh-DB-acS" id="8wr-b4-Dfd"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bm-8Z-w91" userLabel="First Responder" sceneMemberID="firstResponder"/>
