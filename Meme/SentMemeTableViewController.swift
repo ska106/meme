@@ -16,10 +16,15 @@ class SentMemeTableViewController:UITableViewController
                     return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
                 }
     
-    override func viewDidLoad()
+    @IBOutlet var memeTableView: UITableView!
+    
+    override func viewWillAppear(animated: Bool)
     {
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
+        print ("[TableVC] :::: Total sized of sent memes =  \(memes.count) " )
+        memeTableView.reloadData()
     }
+    
     
     /**
      * Number of Rows

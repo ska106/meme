@@ -70,7 +70,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4X4-Zf-K5k">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4X4-Zf-K5k">
                                 <rect key="frame" x="0.0" y="40" width="600" height="467"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjO-BJ-N37">
@@ -81,7 +81,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19c-0S-0sZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19c-0S-0sZ">
                                 <rect key="frame" x="0.0" y="463" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="7mB-DF-ehq"/>
@@ -91,7 +91,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" restorationIdentifier="click" translatesAutoresizingMaskIntoConstraints="NO" id="TCZ-5K-9gy">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" restorationIdentifier="click" translatesAutoresizingMaskIntoConstraints="NO" id="TCZ-5K-9gy">
                                 <rect key="frame" x="0.0" y="507" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rkF-61-ul9"/>
@@ -178,28 +178,40 @@
         <scene sceneID="mvV-bD-lXe">
             <objects>
                 <tableViewController id="hFz-M9-igH" customClass="SentMemeTableViewController" customModule="Meme" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="wu5-i0-66s">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" id="wu5-i0-66s">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeTableCell" rowHeight="66" id="0dt-uk-fty" customClass="SentMemeTableCell" customModule="Meme" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="66"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeTableCell" rowHeight="88" id="0dt-uk-fty" customClass="SentMemeTableCell" customModule="Meme" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0dt-uk-fty" id="chJ-CN-a5F">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="65.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" tableViewCell="0dt-uk-fty" id="chJ-CN-a5F">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbL-7A-YhK">
-                                            <rect key="frame" x="8" y="-8" width="77" height="73.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbL-7A-YhK">
+                                            <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="77" id="RhV-io-RsS"/>
+                                                <constraint firstAttribute="width" constant="77" id="m4s-QD-zhs"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="989-xu-Tz2">
-                                            <rect key="frame" x="93" y="8" width="499" height="36"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="989-xu-Tz2">
+                                            <rect key="frame" x="77" y="15" width="515" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="989-xu-Tz2" firstAttribute="top" secondItem="chJ-CN-a5F" secondAttribute="topMargin" constant="7" id="1Br-LN-LCE"/>
+                                        <constraint firstItem="zbL-7A-YhK" firstAttribute="top" secondItem="chJ-CN-a5F" secondAttribute="top" id="CEU-8i-si3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="989-xu-Tz2" secondAttribute="trailing" id="Fgj-EV-Zhn"/>
+                                        <constraint firstItem="989-xu-Tz2" firstAttribute="leading" secondItem="zbL-7A-YhK" secondAttribute="trailing" id="Uth-Pg-I6a"/>
+                                        <constraint firstItem="zbL-7A-YhK" firstAttribute="leading" secondItem="chJ-CN-a5F" secondAttribute="leading" id="cSe-iT-kmt"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="989-xu-Tz2" secondAttribute="bottom" constant="28.5" id="t5n-cS-6oP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageCell" destination="zbL-7A-YhK" id="IaD-L6-ycg"/>
@@ -216,11 +228,14 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="09T-I7-qod">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vI0-ZB-Cuo">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="B0N-lJ-vx1"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="QEv-Zd-e04"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="memeTableView" destination="wu5-i0-66s" id="1Nc-Mc-BuK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecG-cX-Jco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,28 +249,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uvs-Sg-fav">
-                            <size key="itemSize" width="114" height="116"/>
+                            <size key="itemSize" width="134" height="136"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCollectionCell" id="s2D-1i-blC" customClass="SentMemeCollectionCell" customModule="Meme" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="114" height="116"/>
+                                <rect key="frame" x="0.0" y="64" width="134" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="114" height="116"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="134" height="136"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PIz-IA-3pt">
-                                            <rect key="frame" x="0.0" y="0.0" width="114" height="116"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PIz-IA-3pt">
+                                            <rect key="frame" x="14" y="14" width="106" height="108"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="PIz-IA-3pt" firstAttribute="leading" secondItem="s2D-1i-blC" secondAttribute="leadingMargin" id="Ndz-sS-k5j"/>
-                                    <constraint firstItem="PIz-IA-3pt" firstAttribute="top" secondItem="s2D-1i-blC" secondAttribute="topMargin" id="RHn-A2-3O7"/>
+                                    <constraint firstItem="PIz-IA-3pt" firstAttribute="leading" secondItem="s2D-1i-blC" secondAttribute="leadingMargin" constant="6" id="Ndz-sS-k5j"/>
+                                    <constraint firstAttribute="bottom" secondItem="PIz-IA-3pt" secondAttribute="bottom" constant="14" id="PcQ-4j-Box"/>
+                                    <constraint firstItem="PIz-IA-3pt" firstAttribute="top" secondItem="s2D-1i-blC" secondAttribute="topMargin" constant="6" id="RHn-A2-3O7"/>
+                                    <constraint firstAttribute="trailing" secondItem="PIz-IA-3pt" secondAttribute="trailing" constant="14" id="sL6-As-AE6"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="collectionImageCell" destination="PIz-IA-3pt" id="Vun-Uz-Cmk"/>
@@ -270,7 +287,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="feJ-8h-QY2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mLw-N8-xx5">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="3jw-Xv-Qxu"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="odc-ZF-d1H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -323,6 +340,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3jw-Xv-Qxu"/>
+        <segue reference="QEv-Zd-e04"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -237,6 +237,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         // Add it to the memes array in the Application Delegate
         (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
+        print ("SAVED MEME ARRAY SIZE : \((UIApplication.sharedApplication().delegate as! AppDelegate).memes.count)")
     }
     
     func generateMemedImage() -> UIImage

@@ -25,20 +25,19 @@ class SentMemeCollectionViewController: UICollectionViewController
         let space : CGFloat = 3.0
         
         //decide the dimension based on the orientation of the device.
-        let dimension = (UIDevice.currentDevice().orientation.isPortrait) ?  (self.view.frame.width) - (2*space) / 3 : (self.view.frame.height) - (2*space) / 3
+        let dimension = (UIDevice.currentDevice().orientation.isPortrait) ?  (self.view.frame.width) - (2*space) / 3.0 : (self.view.frame.height) - (2*space) / 3.0
         
         sentMemeCollectionFlowLayout.minimumInteritemSpacing = space
         sentMemeCollectionFlowLayout.minimumLineSpacing = space
         sentMemeCollectionFlowLayout.itemSize = CGSizeMake(dimension, dimension)
-        
-        //Ref: http://stackoverflow.com/questions/29090837/uicollectionview-not-refreshing
-        sentMemeCollectionView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.hidden = false
+        
+        //Ref: http://stackoverflow.com/questions/29090837/uicollectionview-not-refreshing
+        sentMemeCollectionView.reloadData()
     }
     
     /*
