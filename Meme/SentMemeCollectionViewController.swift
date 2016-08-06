@@ -34,11 +34,17 @@ class SentMemeCollectionViewController: UICollectionViewController
         self.tabBarController?.tabBar.hidden = false
     }
     
+    /*
+     * Get the number of items to be displayed in the collection
+     */
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.memes.count
     }
     
+    /*
+     * Cell for Collection at Index path
+     */
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         let myCell = collectionView.dequeueReusableCellWithReuseIdentifier("memeCollectionCell", forIndexPath: indexPath) as! SentMemeCollectionCell

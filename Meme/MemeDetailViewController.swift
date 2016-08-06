@@ -24,10 +24,16 @@ class MemeDetailViewController:UIViewController
     {
         super.viewWillAppear(animated)
         memeImageView.image = memeImage?.savedMemeImage
+        
+        //Hide the tab bar at the bottom of the view.
+        self.tabBarController?.tabBar.hidden = true
     }
     
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
+        
+        //Unhide the tab bar at the bottom of the view.
+        self.tabBarController?.tabBar.hidden = false
     }
 }
