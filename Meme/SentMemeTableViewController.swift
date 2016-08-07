@@ -17,8 +17,9 @@ class SentMemeTableViewController:UITableViewController
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
         // For the image to scale properly.
-        memeTableView.contentMode = UIViewContentMode.ScaleAspectFill
+        memeTableView.contentMode = UIViewContentMode.ScaleAspectFit
     }
     
     override func viewWillAppear(animated: Bool)

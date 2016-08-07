@@ -27,7 +27,7 @@ class SentMemeCollectionViewController: UICollectionViewController
         
         
         // For the image to scale properly.
-        sentMemeCollectionView.contentMode = UIViewContentMode.ScaleAspectFill
+        sentMemeCollectionView.contentMode = UIViewContentMode.ScaleAspectFit
         
         let space : CGFloat = 2.0
         
