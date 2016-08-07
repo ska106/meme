@@ -11,16 +11,14 @@ import UIKit
 
 class SentMemeTableViewController:UITableViewController
 {
-    var memes:[MemeModel]
-                {
-                    return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
-                }
+    var memes:[MemeModel]!
     
     @IBOutlet var memeTableView: UITableView!
     
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
+        self.memes = (UIApplication.sharedApplication().delegate as! AppDelegate).memes
         print ("[TableVC] :::: Total sized of sent memes =  \(memes.count) " )
         memeTableView.reloadData()
     }
@@ -40,7 +38,7 @@ class SentMemeTableViewController:UITableViewController
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("memeTableCell")! as! SentMemeTableCell
-        let favoriteThingForRow = self.memes[indexPath.row]
+        let favoriteThingForRow = self.memes![indexPath.row]
         cell.imageCell.image = favoriteThingForRow.savedMemeImage
         cell.labelCell.text = "TOP:"+favoriteThingForRow.topLabel + " BOTTOM: " + favoriteThingForRow.bottomLabel
         return cell
@@ -52,7 +50,26 @@ class SentMemeTableViewController:UITableViewController
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
-        detailController.memeImage = self.memes[indexPath.row]
+        detailController.memeImage = self.memes![indexPath.row]
         self.navigationController!.pushViewController(detailController, animated: true)
+    }
+    
+    /*
+     * Added a swipe to delete function in the table vie to delete a sent meme.
+     * Ref: http://stackoverflow.com/questions/24103069/swift-add-swipe-to-delete-tableviewcell
+     */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if (editingStyle == UITableViewCellEditingStyle.Delete)
+        {
+            // handle delete (by removing the data from your array and updating the tableview)
+            if let tv = memeTableView
+            {
+                self.memes!.removeAtIndex(indexPath.row)
+                tv.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                // to update the global memme repository
+                (UIApplication.sharedApplication().delegate as! AppDelegate).memes = self.memes
+            }
+        }
     }
 }
