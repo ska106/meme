@@ -13,6 +13,7 @@ class MemeDetailViewController:UIViewController
 {
     
     @IBOutlet weak var memeImageView: UIImageView!
+    
     var memeImage:MemeModel!
     
     override func prefersStatusBarHidden() -> Bool

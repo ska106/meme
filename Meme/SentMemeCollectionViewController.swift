@@ -22,14 +22,16 @@ class SentMemeCollectionViewController: UICollectionViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        let space : CGFloat = 3.0
+        // Made the back ground color as white to be consistent with the Table View Controller.
+        sentMemeCollectionView.backgroundColor = UIColor.whiteColor()
+        let space : CGFloat = 2.0
         
         //decide the dimension based on the orientation of the device.
-        let dimension = (UIDevice.currentDevice().orientation.isPortrait) ?  (self.view.frame.width) - (2*space) / 3.0 : (self.view.frame.height) - (2*space) / 3.0
+        //let dimension = (UIDevice.currentDevice().orientation.isPortrait) ?  (self.view.frame.width) - (2 * space) / 3.0 : (self.view.frame.height) - (2 * space) / 3.0
         
         sentMemeCollectionFlowLayout.minimumInteritemSpacing = space
         sentMemeCollectionFlowLayout.minimumLineSpacing = space
-        sentMemeCollectionFlowLayout.itemSize = CGSizeMake(dimension, dimension)
+        //sentMemeCollectionFlowLayout.itemSize = CGSizeMake(dimension, dimension)
     }
     
     override func viewWillAppear(animated: Bool)

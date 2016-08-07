@@ -9,7 +9,7 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="kQz-LO-dRw">
             <objects>
-                <viewController id="jvc-l9-b69" customClass="MemeDetailViewController" customModule="Meme" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" id="jvc-l9-b69" customClass="MemeDetailViewController" customModule="Meme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T7E-qJ-CsR"/>
                         <viewControllerLayoutGuide type="bottom" id="x5X-O6-v4y"/>
