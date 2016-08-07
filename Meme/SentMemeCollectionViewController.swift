@@ -25,7 +25,6 @@ class SentMemeCollectionViewController: UICollectionViewController
         // Made the back ground color as white to be consistent with the Table View Controller.
         sentMemeCollectionView.backgroundColor = UIColor.whiteColor()
         
-        
         // For the image to scale properly.
         sentMemeCollectionView.contentMode = UIViewContentMode.ScaleAspectFit
         
