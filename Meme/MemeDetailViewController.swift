@@ -21,11 +21,17 @@ class MemeDetailViewController:UIViewController
         return true     // status bar should be hidden
     }
     
+    override func viewDidLoad()
+    {
+        // For the image to scale properly.
+        memeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+    }
+    
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
         memeImageView.image = memeImage?.savedMemeImage
-        
+
         //Hide the tab bar at the bottom of the view.
         self.tabBarController?.tabBar.hidden = true
     }
