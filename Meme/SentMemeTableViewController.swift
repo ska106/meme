@@ -62,7 +62,6 @@ class SentMemeTableViewController:UITableViewController
     {
         if (editingStyle == UITableViewCellEditingStyle.Delete)
         {
-            // handle delete (by removing the data from your array and updating the tableview)
             if let tv = memeTableView
             {
                 self.memes!.removeAtIndex(indexPath.row)
