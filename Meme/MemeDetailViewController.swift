@@ -25,7 +25,7 @@ class MemeDetailViewController:UIViewController
     {
         super.viewDidLoad()
         // For the image to scale properly.
-        memeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        memeImageView.contentMode = UIViewContentMode.ScaleAspectFit
     }
     
     override func viewWillAppear(animated: Bool)
