@@ -263,16 +263,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PIz-IA-3pt">
-                                            <rect key="frame" x="14" y="14" width="106" height="108"/>
+                                            <rect key="frame" x="8" y="8" width="118" height="120"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="PIz-IA-3pt" firstAttribute="leading" secondItem="s2D-1i-blC" secondAttribute="leadingMargin" constant="6" id="Ndz-sS-k5j"/>
-                                    <constraint firstAttribute="bottom" secondItem="PIz-IA-3pt" secondAttribute="bottom" constant="14" id="PcQ-4j-Box"/>
-                                    <constraint firstItem="PIz-IA-3pt" firstAttribute="top" secondItem="s2D-1i-blC" secondAttribute="topMargin" constant="6" id="RHn-A2-3O7"/>
-                                    <constraint firstAttribute="trailing" secondItem="PIz-IA-3pt" secondAttribute="trailing" constant="14" id="sL6-As-AE6"/>
+                                    <constraint firstItem="PIz-IA-3pt" firstAttribute="leading" secondItem="s2D-1i-blC" secondAttribute="leadingMargin" id="FWs-ZV-m4P"/>
+                                    <constraint firstItem="PIz-IA-3pt" firstAttribute="top" secondItem="s2D-1i-blC" secondAttribute="topMargin" id="Vhj-iW-1wc"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="PIz-IA-3pt" secondAttribute="trailing" id="pVW-bh-t0I"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="PIz-IA-3pt" secondAttribute="bottom" id="t5W-kU-gHu"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="collectionImageCell" destination="PIz-IA-3pt" id="Vun-Uz-Cmk"/>
@@ -340,6 +340,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QEv-Zd-e04"/>
+        <segue reference="odc-ZF-d1H"/>
     </inferredMetricsTieBreakers>
 </document>
